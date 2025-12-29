@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>User Dashboard</h2>
+
+    <img id="profilePhoto" class="profile-img" alt="Profile Photo">
+
+    <p><b>Name:</b> <span id="name"></span></p>
+    <p><b>Email:</b> <span id="email"></span></p>
+    <p><b>Phone:</b> <span id="phone"></span></p>
+    <p><b>Password:</b> <span id="pass"></span></p>
+
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+document.getElementById("name").innerText =
+    localStorage.getItem("fname") + " " + localStorage.getItem("lname");
+
+document.getElementById("email").innerText = localStorage.getItem("email");
+document.getElementById("phone").innerText = localStorage.getItem("phone");
+document.getElementById("pass").innerText = localStorage.getItem("pass");
+
+let photo = localStorage.getItem("photo");
+if (photo) {
+    document.getElementById("profilePhoto").src = photo;
+}
+
+function logout() {
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>User Registration</h2>
+
+    <form onsubmit="registerUser(); return false;">
+        <input type="text" id="fname" placeholder="First Name" required>
+        <input type="text" id="lname" placeholder="Last Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="pass" placeholder="password" required>
+        <input type="text" id="phone" placeholder="Phone Number" required>
+        <input type="text" id="photo" placeholder="Profile Photo URL">
+
+        <button type="submit">Register</button>
+    </form>
+
+    <div class="links">
+        <a href="signin.html">Already have an account? Sign In</a>
+    </div>
+</div>
+
+<script>
+function registerUser() {
+    localStorage.setItem("fname", fname.value);
+    localStorage.setItem("lname", lname.value);
+    localStorage.setItem("email", email.value);
+    localStorage.setItem("phone", phone.value);
+    localStorage.setItem("photo", photo.value);
+    localStorage.setItem("pass", pass.value);
+
+    alert("Registration Successful!");
+    window.location.href = "signin.html";
+}
+</script>
+
+</body>
+</html>
